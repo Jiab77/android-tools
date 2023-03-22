@@ -29,7 +29,8 @@ function full_backup() {
 }
 function app_backup() {
     echo -e "\nRunning 'app' backup...\n"
-    adb backup "$BACKUP_ARGS" -f "$BACKUP_FOLDER"/"$BACKUP_NAME"
+    # adb backup "$BACKUP_ARGS" -f "$BACKUP_FOLDER"/"$BACKUP_NAME"
+    adb shell 'bu backup '"$BACKUP_ARGS"'' > "$BACKUP_FOLDER"/"$BACKUP_NAME"
 }
 function check_app_name() {
     [[ -z $APP_TO_BACKUP || -d $APP_TO_BACKUP ]] && echo -e "\nError: You must define the application to backup.\n" && exit 1
@@ -65,8 +66,8 @@ case "${BACKUP_TYPE,,}" in
     ;;
     app)
         APP_TO_BACKUP="$2"
-        BACKUP_ARGS="-apk $APP_TO_BACKUP"
-        # BACKUP_ARGS="-apk $APP_TO_BACKUP -obb"
+        # BACKUP_ARGS="-apk $APP_TO_BACKUP"
+        BACKUP_ARGS="-apk $APP_TO_BACKUP -obb"
         BACKUP_FOLDER=$3
 
         check_app_name
