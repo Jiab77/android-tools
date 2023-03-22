@@ -4,6 +4,8 @@
 # Made by Jiab77 / 2023
 #
 # References:
+# - https://stackoverflow.com/questions/8840954/how-do-i-keep-my-screen-unlocked-during-usb-debugging/27681288#27681288
+# - https://stackoverflow.com/questions/8840954/how-do-i-keep-my-screen-unlocked-during-usb-debugging/43364859#43364859
 #
 # Version 0.0.0
 
