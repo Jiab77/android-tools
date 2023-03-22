@@ -12,6 +12,7 @@
 set +o xtrace
 
 # Config
+LIST_DEVICES_ONLY=false
 
 # Functions
 function list_devices() {
@@ -38,7 +39,12 @@ function gather_device_info() {
 [[ $1 == "-h" || $1 == "--help" ]] && echo -e "\nUsage: $(basename "$0")\n" && exit 1
 
 # Checks
+[[ $1 == "--short" ]] && LIST_DEVICES_ONLY=true
 
 # Main
-list_devices
-gather_device_info
+if [[ $LIST_DEVICES_ONLY == true ]]; then
+    list_devices
+else
+    list_devices
+    gather_device_info
+fi
