@@ -5,6 +5,7 @@
 # Made by Jiab77 / 2023
 #
 # References:
+# - https://superuser.com/questions/386059/how-can-i-start-multiple-screen-sessions-automatically/386122#386122
 #
 # Version 0.0.0
 
