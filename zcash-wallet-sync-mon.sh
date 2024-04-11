@@ -9,7 +9,7 @@
 # Version 0.0.0
 
 # Options
-set +o xtrace
+[[ -r $HOME/.debug ]] && set -o xtrace || set +o xtrace
 
 # Config
 APP_TO_WATCH="$1"

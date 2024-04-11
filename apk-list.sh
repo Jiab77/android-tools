@@ -9,7 +9,7 @@
 # Version 0.0.1
 
 # Options
-set +o xtrace
+[[ -r $HOME/.debug ]] && set -o xtrace || set +o xtrace
 
 # Config
 DUMP_TYPE=$1
